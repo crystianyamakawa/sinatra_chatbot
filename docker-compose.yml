@@ -14,6 +14,8 @@ services:
       - '9292:9292'
     volumes:
       - '.:/sinatra_chatbot'
+    environment:
+      - LANG=C.UTF-8
 
 volumes:
   postgres:
