@@ -11,7 +11,7 @@ module LinkModule
       begin
         link = @company.links.find(@id)
       rescue
-        return "Questão inválida, verifique o Id"
+        return "Link inválido, verifique o Id"
       end
 
       Link.transaction do
