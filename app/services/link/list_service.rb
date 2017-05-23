@@ -13,8 +13,8 @@ module LinkModule
       elsif @action == "search_links_by_hashtag"
         links = []
         @company.links.each do |link|
-          links.hashtags.each do |hashtag|
-            links << link if hashtag.name == @query
+          link.hashtags.each do |hashtag|
+            links << link if hashtag.name.include? @query
           end
         end
       else
