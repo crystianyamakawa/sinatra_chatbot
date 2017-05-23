@@ -27,9 +27,9 @@ module LinkModule
         response += "*#{f.description} - "
         response += "*#{f.posted_by}*\n"
         response += ">#{f.url}\n"
-        #f.hashtags.each do |h|
-        #  response += "_##{h.name}_ "
-        #end
+        f.hashtags.each do |h|
+          response += "_##{h.name}_ "
+        end
         response += "\n\n"
       end
       (links.count > 0)? response : "Nada encontrado"
