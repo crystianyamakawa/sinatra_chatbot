@@ -1,3 +1,6 @@
+require "pg_search"
+include PgSearch
+
 class Link < ActiveRecord::Base
   validates_presence_of :url
 
