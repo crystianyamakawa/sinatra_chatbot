@@ -117,7 +117,7 @@ describe InterpretService do
       link1 = create(:link, company: @company)
       link2 = create(:link, company: @company)
 
-      response = InterpretService.call('list', {})
+      response = InterpretService.call('list_links', {})
 
       expect(response).to match(link1.description)
       expect(response).to match(link1.posted_by)
