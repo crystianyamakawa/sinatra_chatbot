@@ -35,15 +35,15 @@ describe LinkModule::ListService do
       expect(response).to match("Nada encontrado")
     end
 
-    it "with search command: With valid query, find question and answer in response" do
+    it "with search command: With valid query, find description and url in response" do
       link = create(:link, company: @company)
 
-      @listService = LinkModule::ListService.new({'query' => link.question.split(" ").sample}, 'search_links')
+      @listService = LinkModule::ListService.new({'query' => link.description.split(" ").sample}, 'search_links')
 
       response = @listService.call()
 
-      expect(response).to match(link.question)
-      expect(response).to match(link.answer)
+      expect(response).to match(link.description)
+      expect(response).to match(link.url)
     end
 
     it "with search_by_hashtag command: With invalid hashtag, return don't find message" do
@@ -62,8 +62,8 @@ describe LinkModule::ListService do
 
       response = @listService.call()
 
-      expect(response).to match(link.question)
-      expect(response).to match(link.answer)
+      expect(response).to match(link.description)
+      expect(response).to match(link.url)
     end
   end
 end

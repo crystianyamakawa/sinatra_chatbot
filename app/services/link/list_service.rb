@@ -24,7 +24,7 @@ module LinkModule
       response = "*Links Cadastrados* \n\n"
       links.each do |f|
         response += "*#{f.id}* - "
-        response += "*#{f.description} - "
+        response += "*#{f.description} - Enviado Por: "
         response += "*#{f.posted_by}*\n"
         response += ">#{f.url}\n"
         f.hashtags.each do |h|

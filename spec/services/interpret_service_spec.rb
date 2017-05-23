@@ -137,7 +137,7 @@ describe InterpretService do
     it "With valid query, find description and url in response" do
       link = create(:link, company: @company)
 
-      response = InterpretService.call('search_links', {"query" => link.question.split(" ").sample})
+      response = InterpretService.call('search_links', {"query" => link.description.split(" ").sample})
 
       expect(response).to match(link.description)
       expect(response).to match(link.url)
@@ -181,13 +181,13 @@ describe InterpretService do
     end
 
     it "With valid params, find descrition and url in database" do
-      response = InterpretService.call('create', {"description" => @description, "url" => @url, "posted_by" => @posted_by, "hashtags" => @hashtags})
+      response = InterpretService.call('create_link', {"description" => @description, "url" => @url, "posted_by" => @posted_by, "hashtags" => @hashtags})
       expect(Link.last.description).to match(@description)
       expect(Link.last.url).to match(@url)
     end
 
     it "With valid params, hashtags are created" do
-      response = InterpretService.call('create', {"description" => @description, "url" => @url, "posted_by" => @posted_by, "hashtags" => @hashtags})
+      response = InterpretService.call('create_link', {"description" => @description, "url" => @url, "posted_by" => @posted_by, "hashtags" => @hashtags})
       expect(@hashtags.split(/[\s,]+/).first).to match(Hashtag.first.name)
       expect(@hashtags.split(/[\s,]+/).last).to match(Hashtag.last.name)
     end
@@ -202,7 +202,7 @@ describe InterpretService do
 
     it "With invalid ID, receive error message" do
       response = InterpretService.call('remove_link', {"id" => rand(1..9999)})
-      expect(response).to match("Questão inválida, verifique o Id")
+      expect(response).to match("Link inválido, verifique o Id")
     end
   end
 
