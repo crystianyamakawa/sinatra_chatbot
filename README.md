@@ -9,7 +9,7 @@ Chatbot para Slack com as funcionalidades de Faq e agregador de sites.
 
 ## [Api sinatra](https://crystian-app2-chatbot.herokuapp.com/sinatra)
 
-![Working in Slack](https://raw.githubusercontent.com/crystianyamakawasinatra_chatbot/tree/master/public/use_in_slack.png)
+![Working in Slack](https://raw.githubusercontent.com/crystianyamakawa/sinatra_chatbot/master/public/use_in_slack.png)
 
 
 
