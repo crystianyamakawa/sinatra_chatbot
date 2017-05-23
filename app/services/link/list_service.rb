@@ -32,7 +32,7 @@ module LinkModule
         end
         response += "\n\n"
       end
-      (faqs.count > 0)? response : "Nada encontrado"
+      (links.count > 0)? response : "Nada encontrado"
     end
   end
 end
