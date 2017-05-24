@@ -4,7 +4,7 @@ module LinkModule
       # TODO: identify origin and set company
       @company = Company.last
       @description = params["description"]
-      @url = params["url"]
+      @url = params["url_original"]
       @posted_by = params["posted_by"]
       @hashtags = params["hashtags"]
     end
